@@ -1,0 +1,36 @@
+@mixin text ($fontfamily, $fontsize, $color, $lineheight, $fontweight) {
+    font-family: $fontfamily;
+    font-size: $fontsize;
+    color: $color;
+    line-height: $lineheight;
+    font-weight: $fontweight;
+}
+
+@mixin flex ($displayflex, $flexdirection, $justify, $alignit) {
+    display: $displayflex;
+    flex-direction: $flexdirection;
+    justify-content: $justify;
+    align-items: $alignit;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+$red: #fc5f45;
+$green: #38c695;
+$violet: #b27cf5;
+$orange: #feb960;
+
+* {
+    box-sizing: border-box;
+}
+
+// font-family: 'Poppins', sans-serif;
+// font-family: 'Libre Baskerville', serif;

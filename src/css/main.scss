@@ -1,0 +1,133 @@
+@import "variables.scss";
+
+@font-face {
+    font-family: WisdomScript;
+    src: url(../fonts/WisdomScriptAJ.otf);
+}
+
+
+// ==== header ====
+
+.header {
+    width: 100%;
+
+    &-inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        font-family: WisdomScript;
+        font-size: 35px;
+        line-height: 65px;
+        color: #616161;
+
+        span {
+            color: $red;
+        }
+    }
+
+    &__nav-list {
+        display: flex;
+        align-items: center;
+        min-height: 77px;
+
+        li {
+            padding-left: 15px;
+        }
+
+        a {
+            @include text(Poppins, 14px, #272727, none, 500);
+            border: 5px solid transparent;
+            transition: .5s;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: $orange;
+                border: 5px solid $orange;
+                border-radius: 5px;
+                color: #fff;
+            }
+        }
+    }
+}
+
+// ==== /header ====
+
+// ==== start ====
+
+.start {
+    background-image: url(../img/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 775px;
+    position: relative;
+
+    &:before {
+        content: "";
+        background-color: rgba(#262732, .85);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+    }
+
+    &-inner {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+
+        &__title {
+            @include text('Libre Baskerville', 60px, #fff, 85px, 400);
+            padding: 175px 30px 60px;
+        }
+
+        &__link {
+            @include text(Poppins, 16px, #fff, none, 600);
+            background-color: $red;
+            padding: 20px 40px;
+            border-radius: 35px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 82px;
+            transition: .5s;
+
+            &:hover {
+                background-color: #fff;
+                color: $red;
+            }
+        }
+    }
+
+    &-inner__description-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    &-inner__description {
+        margin: 0 32px;
+
+        &-text {
+            @include text(Poppins, 18px, #fff, none, 500);
+            padding-top: 37px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.start-inner__description-text_green {
+    color: $green;
+}
+
+.start-inner__description-text_violet {
+    color: $violet;
+}
+
+.start-inner__description-text_orange {
+    color: $orange;
+}
+
+// ==== /start ====

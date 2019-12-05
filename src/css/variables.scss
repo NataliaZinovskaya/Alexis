@@ -21,6 +21,7 @@ a {
 .container {
     max-width: 1140px;
     margin: 0 auto;
+    position: relative;
 }
 
 $red: #fc5f45;
@@ -32,5 +33,24 @@ $orange: #feb960;
     box-sizing: border-box;
 }
 
-// font-family: 'Poppins', sans-serif;
-// font-family: 'Libre Baskerville', serif;
+.section__title {
+    @include text('Libre Baskerville', 50px, #313131, 80px, 700);
+    position: relative;
+    z-index: 5;
+}
+
+.section__subtitle {
+    @include text(Poppins, 18px, #616161, 80px, 400);
+    position: relative;
+    z-index: 5;
+}
+
+.section__text {
+    @include text(Poppins, 15px, #616161, 27px, 400);
+    position: relative;
+    z-index: 5;
+}
+
+.section__background-number {
+    @include text(Poppins, 274px, rgba(#e0e0e0, .4), none, 700);
+}

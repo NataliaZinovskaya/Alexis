@@ -33,24 +33,84 @@ $orange: #feb960;
     box-sizing: border-box;
 }
 
-.section__title {
-    @include text('Libre Baskerville', 50px, #313131, 80px, 700);
+
+.titling-box {
+    text-align: center;
     position: relative;
-    z-index: 5;
+
+    &__title {
+        @include text('Libre Baskerville', 50px, #313131, none, 700);
+        padding: 140px 20px 38px 20px;
+        position: relative;
+        z-index: 5;
+    }
+
+    &__subtitle {
+        @include text(Poppins, 18px, #616161, none, 400);
+        padding: 0 20px 80px 20px;
+        position: relative;
+        z-index: 5;
+    }
+
+    &__number {
+        @include text(Poppins, 274px, rgba(#e0e0e0, .4), none, 700);
+        position: absolute;
+        top: -97px;
+        right: 0;
+        left: 0;
+    }
 }
 
-.section__subtitle {
-    @include text(Poppins, 18px, #616161, 80px, 400);
-    position: relative;
-    z-index: 5;
+
+
+// ===== animate =====
+
+@-webkit-keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
 }
 
-.section__text {
-    @include text(Poppins, 15px, #616161, 27px, 400);
-    position: relative;
-    z-index: 5;
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
 }
 
-.section__background-number {
-    @include text(Poppins, 274px, rgba(#e0e0e0, .4), none, 700);
+.fadeInLeft {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@media (print),
+(prefers-reduced-motion: reduce) {
+    .animated {
+        -webkit-animation-duration: 1ms !important;
+        animation-duration: 1ms !important;
+        -webkit-transition-duration: 1ms !important;
+        transition-duration: 1ms !important;
+        -webkit-animation-iteration-count: 1 !important;
+        animation-iteration-count: 1 !important;
+    }
 }

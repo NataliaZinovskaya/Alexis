@@ -172,27 +172,202 @@
         }
 
         &__right-number {
+            @include text(Poppins, 274px, rgba(#e0e0e0, .4), none, 700);
             position: absolute;
             left: 0;
-            top: -32px;
+            top: -100px;
         }
 
         &__right-title {
-            padding: 78px 30px 18px 82px;
+            @include text('Libre Baskerville', 50px, #313131, none, 700);
+            position: relative;
+            z-index: 5;
+            padding: 95px 30px 20px 82px;
         }
 
         &__right-text-first {
+            @include text(Poppins, 15px, #616161, 27px, 400);
+            position: relative;
+            z-index: 5;
             padding: 0 82px 40px 82px;
         }
 
         &__right-text-second {
+            @include text(Poppins, 15px, #616161, 27px, 400);
+            position: relative;
+            z-index: 5;
             padding: 0 82px 103px 82px;
-
 
         }
     }
 }
 
-
-
 // ==== /about us ====
+
+// ==== our focus ====
+
+.our-focus {
+    width: 100%;
+    background-color: #f7f7f7;
+    text-align: center;
+
+    &-content {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.our-focus__box {
+    max-width: 260px;
+    background-color: #fff;
+    box-shadow: 1px 0px 12px -4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 150px;
+
+    &_border-red {
+        border-bottom: 3px solid $red;
+    }
+
+    &_border-green {
+        border-bottom: 3px solid $green;
+    }
+
+    &_border-violet {
+        border-bottom: 3px solid $violet;
+    }
+
+    &_border-orange {
+        border-bottom: 3px solid $orange;
+    }
+
+    &-image {
+        padding: 60px 0 30px 0;
+    }
+
+    &-title {
+        @include text(Poppins, 20px, #313131, none, 500);
+        padding-bottom: 35px;
+    }
+
+    &-descr {
+        @include text(Poppins, 15px, #616161, 25px, 400);
+        padding: 0 35px 64px 35px;
+    }
+}
+
+// ==== /our focus ====
+
+// ==== explore ====
+
+.explore {
+    width: 100%;
+    min-height: 500px;
+    background-image: url(../img/2.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+
+    &:before {
+        content: "";
+        background-color: rgba(#262732, .85);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+    }
+
+    &__title {
+        @include text(Poppins, 30px, #fff, none, 400);
+        text-align: center;
+        position: relative;
+        z-index: 3;
+        padding: 145px 30px 50px 30px;
+    }
+}
+
+// ==== explore ====
+
+// ==== portfolio ====
+.portfolio-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 150px;
+}
+
+.portfolio-content {
+    position: relative;
+    min-height: 288px;
+    max-width: 360px;
+    box-shadow: 1px 0px 15px -2px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+
+    &:hover .portfolio-content__hover-mask {
+        opacity: 1;
+    }
+
+    &:hover .portfolio-content__hover-mask-text {
+        transform: translateY(0);
+    }
+
+    &__hover-mask {
+        position: absolute;
+        min-height: 288px;
+        max-width: 360px;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(#000, 0.3);
+        opacity: 0;
+        transition: .5s;
+        display: flex;
+        align-items: flex-end;
+
+        &-zoom {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            top: 80px;
+            left: 150px;
+            right: 150px;
+            cursor: pointer;
+            @include flex(flex, row, center, center);
+
+            &:before {
+                content: "+";
+                color: #fff;
+                font-size: 70px;
+
+            }
+        }
+
+        &-text {
+            width: 100%;
+            height: 66px;
+            background-color: #fff;
+            transform: translateY(70px);
+            transition: .5s;
+
+            &:before {
+                content: "";
+                background: linear-gradient(to right,
+                        $red 25%, $green 25% 50%, $violet 50% 75%, $orange 75%);
+                display: block;
+                height: 3px;
+                width: 100%;
+            }
+
+            p {
+                text-align: center;
+                @include text(Poppins, 18px, #313131, 66px, 500);
+            }
+        }
+    }
+}
+
+// ==== /portfolio ====

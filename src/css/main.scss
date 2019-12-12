@@ -223,21 +223,6 @@
     box-shadow: 1px 0px 12px -4px rgba(0, 0, 0, 0.1);
     margin-bottom: 150px;
 
-    &_border-red {
-        border-bottom: 3px solid $red;
-    }
-
-    &_border-green {
-        border-bottom: 3px solid $green;
-    }
-
-    &_border-violet {
-        border-bottom: 3px solid $violet;
-    }
-
-    &_border-orange {
-        border-bottom: 3px solid $orange;
-    }
 
     &-image {
         padding: 60px 0 30px 0;
@@ -326,26 +311,6 @@
         display: flex;
         align-items: flex-end;
 
-        &-zoom {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            top: 80px;
-            left: 150px;
-            right: 150px;
-            cursor: pointer;
-            @include flex(flex, row, center, center);
-
-            &:before {
-                content: "+";
-                color: #fff;
-                font-size: 70px;
-
-            }
-        }
-
         &-text {
             width: 100%;
             height: 66px;
@@ -371,3 +336,427 @@
 }
 
 // ==== /portfolio ====
+
+// ==== our team ====
+
+.team {
+    width: 100%;
+    background-color: #f7f7f7;
+    padding-bottom: 150px;
+}
+
+.team-slider-content {
+    width: 100%;
+    display: flex;
+    height: 375px;
+}
+
+.team-slider-content__box {
+    width: 263px;
+    background-color: #fff;
+    margin: 0 15px 50px 15px;
+    @include flex(flex, column, center, center);
+    box-shadow: 1px 0px 15px -2px rgba(0, 0, 0, 0.1);
+
+    &-name {
+        @include text(Poppins, 18px, none, none, 500);
+        padding-bottom: 15px;
+        text-align: center;
+    }
+
+    &-prof {
+        @include text(Poppins, 13px, #616161, none, 400);
+        padding-bottom: 18px;
+        text-align: center;
+    }
+}
+
+.team-slider-content__box-image1_gradient-red {
+    background: linear-gradient(360deg, rgba($red, .2), rgba(#000, .1)), url(../img/team1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 260px;
+    width: 245px;
+    margin: 5px 5px 23px 5px;
+}
+
+.team-slider-content__box-image2_gradient-green {
+    background: linear-gradient(360deg, rgba($green, .2), rgba(#000, .1)), url(../img/team2.jpg);
+    @extend .team-slider-content__box-image1_gradient-red;
+    background-size: cover;
+    background-position: center;
+}
+
+.team-slider-content__box-image3_gradient-violet {
+    background: linear-gradient(360deg, rgba($violet, .2), rgba(#000, .1)), url(../img/team3.jpg);
+    @extend .team-slider-content__box-image1_gradient-red;
+    background-size: cover;
+    background-position: center;
+}
+
+.team-slider-content__box-image4_gradient-orange {
+    background: linear-gradient(360deg, rgba($orange, .2), rgba(#000, .1)), url(../img/team4.jpg);
+    @extend .team-slider-content__box-image1_gradient-red;
+    background-size: cover;
+    background-position: center;
+}
+
+.team-slider-content__box-image5_gradient-red {
+    background: linear-gradient(360deg, rgba($red, .2), rgba(#000, .1)), url(../img/team5.jpg);
+    @extend .team-slider-content__box-image1_gradient-red;
+    background-size: cover;
+    background-position: center;
+}
+
+.team-slider-content__box-image6_gradient-green {
+    background: linear-gradient(360deg, rgba($green, .2), rgba(#000, .1)), url(../img/team6.jpg);
+    @extend .team-slider-content__box-image1_gradient-red;
+    background-size: cover;
+    background-position: center;
+}
+
+.team-slider-content__box-image7_gradient-violet {
+    background: linear-gradient(360deg, rgba($violet, .2), rgba(#000, .1)), url(../img/team7.jpg);
+    @extend .team-slider-content__box-image1_gradient-red;
+    background-size: cover;
+    background-position: center;
+}
+
+.team-slider-content__box-image8_gradient-orange {
+    background: linear-gradient(360deg, rgba($orange, .2), rgba(#000, .1)), url(../img/team8.jpg);
+    @extend .team-slider-content__box-image1_gradient-red;
+    background-size: cover;
+    background-position: center;
+}
+
+.team-description-box {
+    display: flex;
+    background-color: #fff;
+    box-shadow: 1px 0px 15px -2px rgba(0, 0, 0, 0.1);
+    margin: 55px 15px 0 15px;
+    position: relative;
+
+    &:before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-bottom: 48px solid #fff;
+        position: absolute;
+        top: -45px;
+        left: 98px;
+        z-index: 555;
+    }
+
+    &__image {
+        height: 32px;
+        margin: 180px 80px 100px;
+    }
+}
+
+.team-description-box-about {
+    padding: 75px 0 77px 90px;
+
+    &__name {
+        @include text(Poppins, 20px, #272727, none, 500);
+        padding-bottom: 35px;
+    }
+
+    &__text {
+        @include text(Poppins, 15px, #616161, 27px, 400);
+        max-width: 635px;
+    }
+}
+
+.team-description-box__list-link {
+    height: 152px;
+    border-left: 2px solid #efefef;
+    margin-top: 124px;
+    padding-top: 15px;
+    padding-left: 25px;
+
+    li {
+        padding-bottom: 10px;
+    }
+
+    a {
+        color: #616161;
+        transition: .5s;
+        @include text(Poppins, 15px, #616161, none, 400);
+
+        &:hover {
+            color: #262732;
+        }
+    }
+
+    i {
+        width: 15px;
+        text-align: center;
+        margin-right: 7px;
+    }
+}
+
+
+.slick-initialized .slick-slide {
+    display: flex;
+}
+
+// ==== /our team ====
+
+// ==== statistics ====
+
+.statistics {
+    width: 100%;
+    min-height: 465px;
+    width: 100%;
+    min-height: 500px;
+    background-image: url(../img/3.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+
+    &:before {
+        content: "";
+        background-color: rgba(#262732, .85);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+    }
+}
+
+.statistics-content {
+    position: relative;
+    z-index: 4;
+    padding-top: 144px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.statistics-box {
+    text-align: center;
+    max-width: 190px;
+    @include flex(flex, column, none, center);
+
+    &__image {
+        padding-bottom: 28px;
+    }
+
+    &__numbers {
+        display: flex;
+        justify-content: center;
+    }
+
+    .statistics-box__numbers-counter,
+    .statistics-box__numbers-symbol {
+        @include text(Poppins, 20px, #fefefe, none, 500);
+        padding-bottom: 32px;
+    }
+
+    &__decription {
+        @include text(Poppins, 15px, #fefefe, none, 400);
+    }
+
+    .statistics-box__circle_red {
+        width: 13px;
+        height: 13px;
+        background-color: transparent;
+        border: 1.5px solid $red;
+        border-radius: 50%;
+        margin-top: 39px;
+        position: relative;
+
+        &:before {
+            content: "";
+            width: 5px;
+            height: 5px;
+            background-color: $red;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .statistics-box__circle_green {
+        width: 13px;
+        height: 13px;
+        background-color: transparent;
+        border: 1.5px solid $green;
+        border-radius: 50%;
+        margin-top: 39px;
+        position: relative;
+
+        &:before {
+            content: "";
+            width: 5px;
+            height: 5px;
+            background-color: $green;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .statistics-box__circle_violet {
+        width: 13px;
+        height: 13px;
+        background-color: transparent;
+        border: 1.5px solid $violet;
+        border-radius: 50%;
+        margin-top: 39px;
+        position: relative;
+
+        &:before {
+            content: "";
+            width: 5px;
+            height: 5px;
+            background-color: $violet;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .statistics-box__circle_orange {
+        width: 13px;
+        height: 13px;
+        background-color: transparent;
+        border: 1.5px solid $orange;
+        border-radius: 50%;
+        margin-top: 39px;
+        position: relative;
+
+        &:before {
+            content: "";
+            width: 5px;
+            height: 5px;
+            background-color: $orange;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+// ==== /statistics ====
+
+// ==== work steps ====
+
+.steps {
+    padding-bottom: 152px;
+
+    &-content {
+        padding-top: 50px;
+        position: relative;
+
+        &__box_red-gradient {
+            background: linear-gradient(360deg, rgba($red, .2), rgba(#000, .1)), url(../img/step-1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            max-width: 555px;
+            margin: 0 auto;
+        }
+
+        &__box_green-gradient {
+            @extend .steps-content__box_red-gradient;
+            background: linear-gradient(360deg, rgba($green, .2), rgba(#000, .1)), url(../img/step-2.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        &__box_violet-gradient {
+            @extend .steps-content__box_red-gradient;
+            background: linear-gradient(360deg, rgba($violet, .2), rgba(#000, .1)), url(../img/step-3.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        &__box_orange-gradient {
+            @extend .steps-content__box_red-gradient;
+            background: linear-gradient(360deg, rgba($orange, .2), rgba(#000, .1)), url(../img/step-4.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+    }
+}
+
+.steps-content__description-block-first {
+    max-width: 458px;
+    box-shadow: 1px 0px 15px -2px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.steps-content__description-block-second {
+    max-width: 458px;
+    box-shadow: 1px 0px 15px -2px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    position: absolute;
+    top: 300px;
+    right: 0;
+}
+
+.steps-content__description-block-third {
+    max-width: 458px;
+    box-shadow: 1px 0px 15px -2px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    position: absolute;
+    bottom: 330px;
+    left: 0;
+}
+
+.steps-content__description-block-fourth {
+    max-width: 458px;
+    box-shadow: 1px 0px 15px -2px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+}
+
+.steps-content__description-block-number {
+    @include text('Libre Baskerville', 50px, #e0e0e0, none, 600);
+    padding: 40px 28px 20px 30px;
+    position: absolute;
+
+    &:after {
+        content: "";
+        width: 110px;
+        height: 1.5px;
+        background-color: #e0e0e0;
+        position: absolute;
+        transform: rotate(140deg);
+        left: 30px;
+        top: 85px;
+    }
+}
+
+.steps-content__description-block-title {
+    @include text(Poppins, 25px, #272727, none, 400);
+    padding: 74px 20px 0 126px;
+}
+
+.steps-content__description-block-text {
+    @include text(Poppins, 15px, #616161, 27px, 400);
+    padding: 25px 70px 50px 126px;
+}
+
+// ==== /work steps ====

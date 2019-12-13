@@ -52,6 +52,19 @@
     }
 }
 
+.header__nav-btn {
+    width: 40px;
+    padding-top: 20px;
+    display: none;
+
+    span {
+        height: 5px;
+        background-color: #000;
+        margin-bottom: 5px;
+        display: block;
+    }
+}
+
 // ==== /header ====
 
 // ==== start ====
@@ -277,6 +290,7 @@
 
 // ==== portfolio ====
 .portfolio-wrapper {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -286,9 +300,14 @@
 .portfolio-content {
     position: relative;
     min-height: 288px;
-    max-width: 360px;
+    max-width: 340px;
     box-shadow: 1px 0px 15px -2px rgba(0, 0, 0, 0.1);
     margin: 10px 0;
+
+    &__image {
+        max-width: 340px;
+        height: 288px;
+    }
 
     &:hover .portfolio-content__hover-mask {
         opacity: 1;
@@ -301,7 +320,7 @@
     &__hover-mask {
         position: absolute;
         min-height: 288px;
-        max-width: 360px;
+        max-width: 340px;
         top: 0;
         left: 0;
         right: 0;
@@ -377,7 +396,7 @@
     background-size: cover;
     background-position: center;
     height: 260px;
-    width: 245px;
+    width: 230px;
     margin: 5px 5px 23px 5px;
 }
 
@@ -452,12 +471,12 @@
 
     &__image {
         height: 32px;
-        margin: 180px 80px 100px;
+        margin: 180px 50px 100px 80px;
     }
 }
 
 .team-description-box-about {
-    padding: 75px 0 77px 90px;
+    padding: 75px 0 77px 75px;
 
     &__name {
         @include text(Poppins, 20px, #272727, none, 500);
@@ -510,8 +529,6 @@
 .statistics {
     width: 100%;
     min-height: 465px;
-    width: 100%;
-    min-height: 500px;
     background-image: url(../img/3.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -760,3 +777,458 @@
 }
 
 // ==== /work steps ====
+
+// ==== price ====
+
+.price {
+    width: 100%;
+    background-color: #f7f7f7;
+
+    &-content {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        padding-bottom: 153px;
+    }
+}
+
+.price-content-box_border-top-green {
+    border-top: 2px solid $green;
+}
+
+.price-content-box_border-top-red {
+    border-top: 2px solid $red;
+}
+
+.price-content-box_border-top-violet {
+    border-top: 2px solid $violet;
+}
+
+.price-content-box {
+    width: 330px;
+    background-color: #fff;
+    box-shadow: 1px 0px 15px -2px rgba(0, 0, 0, 0.1);
+
+    &__title {
+        @include text(Poppins, 20px, #313131, none, 500);
+        padding: 35px 0 30px;
+    }
+
+    &__circle-block {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        margin: 0 auto;
+        position: relative;
+        margin-bottom: 43px;
+        @include flex(flex, column, center, center);
+
+        &-price {
+            @include text(Poppins, 25px, #fff, none, 400);
+            position: relative;
+            z-index: 10;
+        }
+
+        &-period {
+            @include text(Poppins, 12px, #fff, none, 400);
+            position: relative;
+            z-index: 10;
+        }
+    }
+
+    &__circle-block_red {
+        border: 2px solid $red;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: $red;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__circle-block_green {
+        border: 2px solid $green;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: $green;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__circle-block_violet {
+        border: 2px solid $violet;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: $violet;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.price-content-box__list-descr {
+    @include text(Poppins, 15px, #616161, 40px, 400);
+
+    span {
+        font-weight: 500;
+    }
+
+    i {
+        font-size: 12px;
+    }
+}
+
+.price-content-box__btn {
+    text-transform: uppercase;
+    @include text(Poppins, 16px, #616161, none, 500);
+    margin: 30px auto 37px;
+    padding: 16px 35px;
+    border-radius: 40px;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.price-content-box__btn_green {
+    border: 2px solid $green;
+
+    &:hover {
+        background-color: $green;
+        color: #fff;
+    }
+}
+
+.price-content-box__btn_red {
+    border: 2px solid $red;
+
+    &:hover {
+        background-color: $red;
+        color: #fff;
+    }
+}
+
+.price-content-box__btn_violet {
+    border: 2px solid $violet;
+
+    &:hover {
+        background-color: $violet;
+        color: #fff;
+    }
+}
+
+// ==== /price ====
+
+// ==== teatimonials ====
+
+.testimonials {
+    width: 100%;
+    min-height: 872px;
+    background-image: url(../img/4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    &:before {
+        content: "";
+        background-color: rgba(#262732, .85);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+    }
+
+    &-content {
+        position: relative;
+        z-index: 10;
+        display: flex;
+
+        &__left-image {
+            width: 364px;
+            height: 378px;
+            background-size: cover !important;
+            box-shadow: inset 0px 0px 0px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 11;
+        }
+    }
+}
+
+.testimonials-slider {
+    position: relative;
+    z-index: 10;
+
+    .slick-dots {
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+            font-size: 0;
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            border: 2px solid $red;
+            background-color: transparent;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        li {
+            margin-left: 8px;
+        }
+    }
+}
+
+.testimonials .slick-dots li.slick-active button {
+
+    &:before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background-color: $red;
+        position: absolute;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.testimonials-content__right {
+    height: 309px;
+    max-width: 765px;
+    background-color: #fff;
+    margin-top: 30px;
+    border-bottom: 3px solid $red;
+    position: relative;
+
+    &:before {
+        content: "“";
+        position: absolute;
+        @include text('Libre Baskerville', 337px, #e0e0e0, none, 700);
+        opacity: .4;
+        top: -43px;
+    }
+
+    &-text {
+        @include text(Poppins, 15px, #616161, 27px, 400);
+        padding: 40px 67px 30px 65px;
+        position: relative;
+        z-index: 11;
+    }
+
+    &-signature {
+        height: 29px;
+        padding-left: 65px;
+    }
+
+    &-name {
+        @include text(Poppins, 18px, #272727, none, 500);
+        padding: 23px 0 8px 65px;
+    }
+
+    &-career {
+        @include text(Poppins, 13px, #fc5f45, none, 400);
+        padding-left: 65px;
+    }
+}
+
+// ==== /teatimonials ====
+
+// ==== select ====
+
+.select-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &-box {
+        max-width: 320px;
+        margin-bottom: 75px;
+        position: relative;
+
+        &__image {
+            position: absolute;
+            top: 3px;
+        }
+
+        &__title {
+            @include text(Poppins, 18px, #272727, none, 500);
+            width: 110px;
+            padding-left: 65px;
+            padding-bottom: 35px;
+        }
+
+        &__text {
+            @include text(Poppins, 15px, #616161, 27px, 400);
+        }
+    }
+}
+
+.select-start {
+    margin: 75px auto 150px;
+    display: flex;
+
+    &__text {
+        @include text(Poppins, 25px, #272727, 27px, 400);
+        margin-right: 50px;
+        padding-top: 20px;
+    }
+}
+
+.section__button_red {
+    text-transform: uppercase;
+    @include text(Poppins, 16px, #fff, none, 600);
+    padding: 16px 35px;
+    border-radius: 40px;
+    background-color: $red;
+    border: 2px solid $red;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+
+    &:hover {
+        background-color: #fff;
+        color: $red;
+    }
+}
+
+// ==== /select ====
+
+// ==== blog ====
+
+.blog {
+    width: 100%;
+    background-color: #f7f7f7;
+
+    &-content {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 150px;
+    }
+
+    .blog-content-left {
+        max-width: 555px;
+        box-shadow: 1px 0px 15px -2px rgba(0, 0, 0, 0.1);
+
+        &__image {
+            background-image: url(../img/featured-image.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            min-height: 444px;
+            position: relative;
+        }
+    }
+}
+
+.blog-content-left__image-name {
+    @include text(Poppins, 15px, #fc5f45, none, 500);
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 35px;
+    left: 50px;
+
+    span {
+        @include text(Poppins, 13px, #fff, none, 400);
+        text-transform: none;
+
+    }
+}
+
+.blog-content-left__descr {
+    background-color: #fff;
+
+    &-title {
+        @include text(Poppins, 20px, #272727, 35px, 500);
+        padding: 33px 45px 15px 50px;
+    }
+
+    &-text {
+        @include text(Poppins, 15px, #272727, 27px, 400);
+        padding: 0 45px 30px 50px;
+    }
+
+    &-link {
+        font-weight: 600;
+        color: #272727;
+    }
+}
+
+.blog-content-right {
+    max-width: 555px;
+    margin-left: 30px;
+
+    &__box {
+        background-color: #fff;
+        box-shadow: 1px 0px 15px -2px rgba(0, 0, 0, 0.1);
+
+        &:nth-child(2) {
+            margin: 20px 0;
+        }
+
+        &-name {
+            @include text(Poppins, 15px, #272727, none, 500);
+            text-transform: uppercase;
+            padding: 20px 50px 20px 38px;
+
+            span {
+                @include text(Poppins, 13px, #272727, none, 400);
+                text-transform: none;
+            }
+        }
+
+        &-descr-title {
+            @include text(Poppins, 18px, #272727, none, 500);
+            padding: 0 39px 10px 39px;
+        }
+
+        &-descr-text {
+            @include text(Poppins, 15px, #272727, 27px, 400);
+            padding: 0 39px 28px 39px;
+
+            &-descr-link {
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+// ==== /blog ====
+
+// ==== footer ====
+
+.footer {
+    width: 100%;
+    min-height: 1275px;
+    background-image: url(../img/6.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+// ==== /footer ====

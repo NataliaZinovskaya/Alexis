@@ -20,6 +20,7 @@ a {
 
 .container {
     max-width: 1140px;
+    padding: 0 30px;
     margin: 0 auto;
     position: relative;
 }
@@ -61,20 +62,48 @@ $orange: #feb960;
     }
 }
 
+.titling-box {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+
+    &__title_white {
+        @include text('Libre Baskerville', 50px, #fff, none, 700);
+        padding: 140px 20px 38px 20px;
+        position: relative;
+        z-index: 5;
+    }
+
+    &__subtitle_white {
+        @include text(Poppins, 18px, #fff, none, 400);
+        padding: 0 20px 80px 20px;
+        position: relative;
+        z-index: 5;
+    }
+
+    &__number_opacity {
+        @include text(Poppins, 274px, rgba(#e0e0e0, .2), none, 700);
+        position: absolute;
+        top: -97px;
+        right: 0;
+        left: 0;
+    }
+}
+
 .text_color-red {
-    color: $red;
+    color: $red !important;
 }
 
 .text_color-green {
-    color: $green;
+    color: $green !important;
 }
 
 .text_color-violet {
-    color: $violet;
+    color: $violet !important;
 }
 
 .text_color-orange {
-    color: $orange;
+    color: $orange !important;
 }
 
 

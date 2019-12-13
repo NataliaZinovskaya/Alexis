@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+    $('.header__nav-btn').on('click', function () {
+        $('.header__nav-list').slideToggle();
+    });
+
+
     $('a[href*="#"]').on('click', function (e) {
         e.preventDefault();
 
@@ -24,6 +29,12 @@ $(document).ready(function () {
         slidesToScroll: 1,
         asNavFor: '.team-slider-content',
         cssEase: 'linear'
+    });
+
+
+    $('.testimonials-slider').slick({
+        arrows: false,
+        dots: true
     });
 
 

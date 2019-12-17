@@ -20,7 +20,26 @@ $(document).ready(function () {
         autoplay: true,
         asNavFor: '.team-description-slider',
         focusOnSelect: true,
-        cssEase: 'linear'
+        cssEase: 'linear',
+        responsive: [{
+                breakpoint: 950,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
     });
 
     $('.team-description-slider').slick({

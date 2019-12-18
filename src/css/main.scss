@@ -1243,6 +1243,8 @@
     &-form {
         max-width: 750px;
         margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
 
         &__input {
             width: 360px;
@@ -1302,6 +1304,7 @@
 
     &-wrapp {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;
         min-height: 222px;
@@ -1353,3 +1356,25 @@
 }
 
 // ==== /footer ====
+
+.btn-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    z-index: 10;
+    border: none;
+    outline: none;
+    background-color: #929393;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 15px 20px;
+    border-radius: 10%;
+    transition: .5s;
+    opacity: .5;
+
+    &:hover {
+        background-color: $red;
+    }
+}

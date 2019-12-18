@@ -13,6 +13,7 @@ $(document).ready(function () {
         }, 700, 'linear');
     });
 
+
     $('.team-slider-content').slick({
         arrows: false,
         slidesToShow: 4,
@@ -75,6 +76,22 @@ $(document).ready(function () {
 
             show = false;
         }
+    });
+
+
+    var $btnTop = $('.btn-top');
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop() >= 250) {
+            $btnTop.fadeIn();
+        } else {
+            $btnTop.fadeOut();
+        }
+    });
+
+    $btnTop.on('click', function () {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 900)
     });
 
 });
